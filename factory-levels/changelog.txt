@@ -1,8 +1,13 @@
----------------------------------------------------------------------------------------------------
-Version: 0.6.9
-Date: 2022-09-27
-  Bugfix:
-    - Thanks to CaitSith2: Actually look for the external disable-mod-setting within on_runtime_mod_setting_changed.
+THIS IS A FORK OF VERSION 0.6.8
+Version: 1.0.0
+Date: 2023-01-27
+  Changes:
+   - Added "Electric Furnaces" support.
+   Bugfix:
+   - Fixed bug when liquifier from Angels Refining upgraded to ore crusher
+
+
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.8
 Date: 2022-09-24

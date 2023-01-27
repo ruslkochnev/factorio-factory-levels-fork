@@ -75,6 +75,37 @@ machines = {
 		level_name = "electric-furnace-level-",
 		max_level = 100
 	},
+	
+	-- Electric Furnaces
+	
+		["electric-stone-furnace"] = {
+		name = "electric-stone-furnace",
+		level_name = "electric-stone-furnace-level-",
+		max_level = 25,
+		next_machine = "electric-steel-furnace"
+	},
+	["electric-steel-furnace"] = {
+		name = "electric-steel-furnace",
+		level_name = "electric-steel-furnace-level-",
+		max_level = 100
+	},
+	["electric-furnace"] = {
+		name = "electric-furnace",
+		level_name = "electric-furnace-level-",
+		max_level = 100,
+		next_machine = "electric-furnace-2"
+	},
+		["electric-furnace-2"] = {
+		name = "electric-furnace-2",
+		level_name = "electric-furnace-2-level-",
+		max_level = 100,
+		next_machine = "electric-furnace-3"
+	},
+		["electric-furnace-3"] = {
+		name = "electric-furnace-3",
+		level_name = "electric-furnace-3-level-",
+		max_level = 100
+	},
 
 	-- refining
 	["chemical-plant"] = {
@@ -121,19 +152,19 @@ machines = {
 		name = "liquifier",
 		level_name = "liquifier-level-",
 		max_level = 25,
-		next_machine = "ore-crusher"
+		next_machine = "liquifier-2"
 	},
 	["liquifier-2"] = {
 		name = "liquifier-2",
 		level_name = "liquifier-2-level-",
 		max_level = 25,
-		next_machine = "ore-crusher-2"
+		next_machine = "liquifier-3"
 	},
 	["liquifier-3"] = {
 		name = "liquifier-3",
 		level_name = "liquifier-3-level-",
 		max_level = 50,
-		next_machine = "ore-crusher-3"
+		next_machine = "liquifier-4"
 	},
 	["liquifier-4"] = {
 		name = "liquifier-4",
@@ -525,16 +556,6 @@ function on_runtime_mod_setting_changed(event)
 		end
 		if max_level ~= 100 then
 			game.print("Crafts for Max level of " .. max_level .. ": " .. required_items_for_levels[max_level])
-		end
-	else
-		update_machines = false
-		for machine_name, machine in pairs(machines) do
-			if event.setting == machine.disable_mod_setting then
-				update_machines = true
-			end
-		end
-		if update_machines then
-			get_built_machines()
 		end
 	end
 end
